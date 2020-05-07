@@ -8,6 +8,7 @@ const mapStateToProps = state => {
   return {
     loading: state.coctailes.loading,
     coctailes: state.coctailes.coctailes,
+    activeFilters: state.coctailes.activeFilters,
   };
 };
 

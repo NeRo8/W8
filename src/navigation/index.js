@@ -29,7 +29,7 @@ const AppNavigation = () => (
             height: 4,
           },
           shadowOpacity: 0.58,
-          shadowRadius: 20,
+          shadowRadius: 4,
 
           elevation: 10,
         },
@@ -61,7 +61,7 @@ const AppNavigation = () => (
             height: 4,
           },
           shadowOpacity: 0.58,
-          shadowRadius: 20,
+          shadowRadius: 4,
 
           elevation: 10,
         },

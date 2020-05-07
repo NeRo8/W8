@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {
-  View,
-  Text,
   SafeAreaView,
   ActivityIndicator,
   FlatList,
+  Text,
+  View,
 } from 'react-native';
 
 import Coctaile from '../../components/Coctaile';
@@ -24,11 +24,11 @@ class Home extends Component {
   }
 
   render() {
-    const {loading, coctailes} = this.props;
+    const {loading, coctailes, activeFilters} = this.props;
 
     if (loading) {
       return (
-        <SafeAreaView>
+        <SafeAreaView style={globalStyles.sfContainer}>
           <ActivityIndicator size={'small'} color="balack" />
         </SafeAreaView>
       );
@@ -36,12 +36,17 @@ class Home extends Component {
 
     return (
       <SafeAreaView style={globalStyles.sfContainer}>
-        <FlatList
-          showsVerticalScrollIndicator={false}
-          data={coctailes}
-          renderItem={({item}) => <Coctaile item={item} />}
-          keyExtractor={item => item.idDrink}
-        />
+        <View style={globalStyles.blockContainer}>
+          <Text style={globalStyles.headerTitle}>
+            {activeFilters.toString()}
+          </Text>
+          <FlatList
+            showsVerticalScrollIndicator={false}
+            data={coctailes}
+            renderItem={({item}) => <Coctaile item={item} />}
+            keyExtractor={item => item.idDrink}
+          />
+        </View>
       </SafeAreaView>
     );
   }

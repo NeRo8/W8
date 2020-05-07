@@ -1,4 +1,4 @@
-import {Dimensions, StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet, Platform} from 'react-native';
 import fonts from './fonts';
 import colors from './colors';
 
@@ -26,12 +26,23 @@ const globalStyles = StyleSheet.create({
   sfContainer: {
     flex: 1,
     backgroundColor: colors.BACKGROUND,
+    padding: Platform.OS === 'android' ? scaledSize(20) : 0,
+  },
+  blockContainer: {
+    flex: 1,
     padding: scaledSize(20),
+    backgroundColor: colors.BACKGROUND,
   },
   titleStyle: {
     fontFamily: fonts.robotoRegular,
     fontSize: scaledSize(16),
     color: colors.TITLE,
+  },
+  headerTitle: {
+    fontFamily: fonts.robotoRegular,
+    fontSize: scaledSize(14),
+    color: colors.TITLE,
+    marginBottom: 20,
   },
 });
 

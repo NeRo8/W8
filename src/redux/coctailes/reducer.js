@@ -3,6 +3,8 @@ import * as coctailesTypes from './types';
 const initState = {
   loading: true,
   coctailes: [],
+  activeFilters: ['Ordinary Drink'],
+  filters: [],
 };
 
 const coctailesReducer = (state = initState, action) => {
