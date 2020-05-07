@@ -1,4 +1,4 @@
-import {coctailesTypes} from './index';
+import * as coctailesTypes from './types';
 
 const initState = {
   loading: true,
@@ -13,6 +13,8 @@ const coctailesReducer = (state = initState, action) => {
         [action.field]: action.value,
       };
     }
+    default:
+      return state;
   }
 };
 

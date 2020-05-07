@@ -21,6 +21,7 @@
 		9F251F648F8FFF173A382C79 /* libPods-TestForMySkill-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C2DFABA0EC5AB67E4DC9E7 /* libPods-TestForMySkill-tvOSTests.a */; };
 		F988E743317CAD690614B8DE /* libPods-TestForMySkill.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E5348FAAEBBD7E6BD475C7 /* libPods-TestForMySkill.a */; };
 		1EBA7499A73A4A98974800DB /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF16069DBAE04627986F9B84 /* Roboto-Regular.ttf */; };
+		3322155789D2403AAB41BFE7 /* Roboto- Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 055B185115B74F56A978DC59 /* Roboto- Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		F812E31C7DBC480D8AF5B042 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		FC54F487A0027419CF9ED914 /* Pods-TestForMySkill-TestForMySkillTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestForMySkill-TestForMySkillTests.debug.xcconfig"; path = "Target Support Files/Pods-TestForMySkill-TestForMySkillTests/Pods-TestForMySkill-TestForMySkillTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF16069DBAE04627986F9B84 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; name = "Roboto-Regular.ttf"; path = "../src/assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		055B185115B74F56A978DC59 /* Roboto- Bold.ttf */ = {isa = PBXFileReference; name = "Roboto- Bold.ttf"; path = "../src/assets/fonts/Roboto- Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				6A0C30FE768544708C275A6B /* SimpleLineIcons.ttf */,
 				6B0C27F55BBD4C569BFE5CCB /* Zocial.ttf */,
 				BF16069DBAE04627986F9B84 /* Roboto-Regular.ttf */,
+				055B185115B74F56A978DC59 /* Roboto- Bold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				1EBA7499A73A4A98974800DB /* Roboto-Regular.ttf in Resources */,
+				3322155789D2403AAB41BFE7 /* Roboto- Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

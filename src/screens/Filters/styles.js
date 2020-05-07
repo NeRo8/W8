@@ -1,3 +1,8 @@
 import {StyleSheet} from 'react-native';
+import {scaledSize} from '../../constants/globalStyles';
 
-export default StyleSheet.create({});
+export default StyleSheet.create({
+  categoryItemContainer: {
+    marginVertical: scaledSize(31),
+  },
+});

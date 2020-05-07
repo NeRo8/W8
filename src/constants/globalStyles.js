@@ -1,5 +1,6 @@
 import {Dimensions, StyleSheet} from 'react-native';
 import fonts from './fonts';
+import colors from './colors';
 
 const {width, height} = Dimensions.get('window');
 
@@ -18,10 +19,19 @@ const globalStyles = StyleSheet.create({
     fontFamily: fonts.robotoRegular,
     fontSize: scaledSize(16),
   },
-  robotoRegular24: {
+  robotoRegBold24: {
+    fontFamily: fonts.robotoBold,
+    fontSize: scaledSize(24),
+  },
+  sfContainer: {
+    flex: 1,
+    backgroundColor: colors.BACKGROUND,
+    padding: scaledSize(20),
+  },
+  titleStyle: {
     fontFamily: fonts.robotoRegular,
     fontSize: scaledSize(16),
-    fontWeight: '800',
+    color: colors.TITLE,
   },
 });
 

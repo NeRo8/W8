@@ -7,6 +7,18 @@ const setValueInReducer = (field, value) => ({
   value,
 });
 
-export const getAllCoctailes = (filter = 'Ordinary Drink') => disaptch => {
-  API.get(`/filter.php?c=${filter}`).then(res => console.log(res));
+export const getAllCoctailes = (filter = ['Ordinary Drink']) => dispatch => {
+  dispatch(setValueInReducer('loading', true));
+  API.get(`/filter.php?c=${filter.toString()}`)
+    .then(res => {
+      dispatch(setValueInReducer('coctailes', res.data.drinks));
+    })
+    .then(() => dispatch(setValueInReducer('loading', false)));
+};
+
+export const getFilters = () => dispatch => {
+  dispatch(setValueInReducer('loading', true));
+  API.get('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list')
+    .then(res => dispatch(setValueInReducer('filters', res.data.drinks)))
+    .then(() => dispatch(setValueInReducer('loading', false)));
 };
