@@ -6,10 +6,11 @@ import {
   ActivityIndicator,
   FlatList,
 } from 'react-native';
-import {Button} from 'react-native-elements';
+import {Button, Icon} from 'react-native-elements';
 
 import styles from './styles';
 import {globalStyles} from '../../constants';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 class Filters extends Component {
   constructor(props) {
@@ -25,27 +26,46 @@ class Filters extends Component {
     getFilters();
   }
 
-  static getDerivedStateFromProps(props, state) {
-    const redFilters = props.filters;
-    const redActiveFilters = props.activeFilters;
+  componentDidUpdate(prevProps) {
+    const {filters} = this.props;
 
-    var filtersList = [];
-
-    redFilters.forEach(item => {
-      filtersList.forEach(aItem => {
-        console.log(item, aItem);
-        if (item.strCategory === aItem) {
-          filtersList.push({...item, active: true});
-        }
+    if (prevProps.filters !== filters) {
+      const newFiltersList = filters.map(item => ({...item, active: true}));
+      this.setState({
+        filtersList: newFiltersList,
       });
-    });
-
-    console.log(filtersList);
-    return null;
+    }
   }
 
+  onPressFilter = name => {
+    const {filtersList} = this.state;
+
+    const newFL = filtersList.map(item =>
+      name === item.strCategory ? {...item, active: !item.active} : {...item},
+    );
+
+    this.setState({
+      filtersList: newFL,
+    });
+  };
+
+  handlePressSubmit = () => {
+    const {filtersList} = this.state;
+    const {getCoctailesByCategories, navigation} = this.props;
+
+    const filters = filtersList
+      .map(item => (item.active ? item.strCategory : null))
+      .filter(item => item !== null);
+
+    getCoctailesByCategories(filters);
+
+    navigation.goBack();
+  };
+
   render() {
-    const {loading, filters} = this.props;
+    const {loading} = this.props;
+
+    const {filtersList} = this.state;
 
     if (loading) {
       return (
@@ -60,11 +80,16 @@ class Filters extends Component {
         <View style={globalStyles.blockContainer}>
           <FlatList
             showsVerticalScrollIndicator={false}
-            data={filters}
+            data={filtersList}
             renderItem={({item}) => (
-              <View style={styles.categoryItemContainer}>
+              <TouchableOpacity
+                style={styles.categoryItemContainer}
+                onPress={() => this.onPressFilter(item.strCategory)}>
                 <Text style={globalStyles.titleStyle}>{item.strCategory}</Text>
-              </View>
+                {item.active ? (
+                  <Icon name="check" type="material-community" />
+                ) : null}
+              </TouchableOpacity>
             )}
             keyExtractor={(item, index) => index.toString()}
           />
@@ -74,6 +99,7 @@ class Filters extends Component {
             titleStyle={styles.buttonTitle}
             buttonStyle={styles.buttonStyle}
             containerStyle={styles.buttonContainer}
+            onPress={this.handlePressSubmit}
           />
         </View>
       </SafeAreaView>

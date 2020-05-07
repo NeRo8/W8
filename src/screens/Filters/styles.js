@@ -6,6 +6,9 @@ import {scaledSize} from '../../constants/globalStyles';
 export default StyleSheet.create({
   categoryItemContainer: {
     marginVertical: scaledSize(31),
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   buttonTitle: {
     fontFamily: fonts.robotoBold,

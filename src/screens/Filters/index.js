@@ -14,6 +14,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getFilters: () => dispatch(coctailesActions.getFilters()),
+    getCoctailesByCategories: filters =>
+      dispatch(coctailesActions.getCoctailesByFilters(filters)),
   };
 };
 
